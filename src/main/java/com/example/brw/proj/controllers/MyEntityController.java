@@ -1,7 +1,6 @@
 package com.example.brw.proj.controllers;
 
-
-import com.example.brw.proj.model.MyEntity;
+import com.example.brw.proj.model.Users;
 import com.example.brw.proj.repositories.MyEntityRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +21,13 @@ public class MyEntityController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
 //    @GetMapping(value = "/", produces = "application/json")
-    public MyEntity getMyEntity(@RequestParam("id") long id) {
+    public Users getMyEntity(@RequestParam("userID") long userId) {
 
-        Optional<MyEntity> byId = myEntityRepository.findById(id);
+        Optional<Users> byId = myEntityRepository.findById(userId);
 
+        System.out.println(byId);
         return byId.get();
     }
+
+
 }

@@ -1,10 +1,10 @@
 package com.example.brw.proj.repositories;
 
 
-import com.example.brw.proj.model.MyEntity;
+import com.example.brw.proj.model.Users;
 import org.springframework.data.repository.CrudRepository;
 
-public interface MyEntityRepository extends CrudRepository<MyEntity, Long> {
-    
-    MyEntity getByNameAndBoolIsFalse(String name);
+public interface MyEntityRepository extends CrudRepository<Users, Long> {
+
+   Users getBySurnameAndEmail(String surname, String email);
 }
